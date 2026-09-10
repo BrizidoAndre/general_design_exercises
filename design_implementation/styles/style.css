@@ -1,0 +1,261 @@
+/*css variables*/
+:root {
+    /*primary*/
+    --blue: hsl(233, 26%, 24%);
+    --green: hsl(136, 64%, 51%);
+    --cyan: hsl(192, 69%, 51%);
+    /*    secondary*/
+    --gray-dark: hsl(233, 8%, 62%);
+    --gray-middle: hsl(220, 16%, 96%);
+    --gray-light: hsl(0, 0%, 98%);
+    --white: hsl(0, 100%, 100%);
+}
+
+/*color helpers classes*/
+.blue {
+    color: var(--blue);
+}
+
+.bg-blue {
+    background: var(--blue);
+}
+
+.green {
+    color: var(--green);
+}
+
+.bg-green {
+    background: var(--green);
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.bg-cyan {
+    background: var(--cyan);
+}
+
+.gray-dark {
+    color: var(--gray-dark);
+}
+
+.bg-gray-dark {
+    background: var(--gray-dark);
+}
+
+.gray-middle {
+    color: var(--gray-middle);
+}
+
+.bg-gray-middle {
+    background: var(--gray-middle);
+}
+
+.gray-light {
+    color: var(--gray-light);
+}
+
+.bg-gray-light {
+    background: var(--gray-light);
+}
+
+.white {
+    color: var(--white);
+}
+
+.bg-white {
+    background: var(--white);
+}
+
+/*font families*/
+@font-face {
+    src: url("../assets/fonts/PublicSans-VariableFont_wght.ttf");
+    font-family: sans;
+    font-display: swap;
+}
+
+@font-face {
+    src: url("../assets/fonts/PublicSans-Italic-VariableFont_wght.ttf");
+    font-family: sans-italic;
+    font-display: swap;
+}
+
+.sans {
+    font-family: sans, serif;
+}
+
+.sans-italic {
+    font-family: sans-italic, serif;
+}
+
+/*common classes*/
+.btn-theme {
+    border-radius: 999px;
+    background: linear-gradient(to right, var(--cyan), var(--green));
+    color: var(--white);
+    font-weight: bolder;
+    padding: .5rem 2rem;
+    transition: .4s;
+}
+
+.btn-theme:hover {
+    filter: opacity(.7);
+    background: linear-gradient(to right, var(--cyan), var(--green));
+    color: var(--white);
+}
+
+/* body styling */
+body {
+    font-size: 18px;
+    font-family: sans, serif;
+    background: var(--white);
+    color: var(--gray-dark);
+}
+
+/*header styling*/
+.nav-item {
+    border-bottom: 3px solid transparent;
+    transition: .4s;
+    opacity: .5;
+}
+
+.nav-item:hover {
+    border-color: var(--green);
+    opacity: 1;
+
+    & .nav-link {
+        opacity: 1;
+    }
+}
+
+header.bg-white {
+    box-shadow: 0 50px 250px 50px transparent;
+    transition: .4s;
+}
+
+header.bg-white:has(.nav-show) {
+    box-shadow: 0 50px 250px 50px var(--blue);
+}
+
+.nav-show {
+    text-align: center;
+    display: block !important;
+    position: absolute;
+    width: 80%;
+    border-radius: .5rem;
+    padding: 1rem 0;
+    left: 50%;
+    top: 120%;
+    transform: translate(-50%, 0);
+    background: var(--white);
+    opacity: 0;
+    animation: show .4s ease-out forwards;
+}
+
+@keyframes show {
+    to {
+        opacity: 1
+    }
+}
+
+.nav-show .nav-item {
+    opacity: 1;
+}
+
+/*hero section*/
+
+#hero .container {
+    min-height: 650px;
+}
+
+h1, h2, .title {
+    color: var(--blue);
+}
+
+.hero-background {
+    position: absolute;
+    top: -10%;
+    right: -30%;
+    z-index: -2;
+    height: 150%;
+}
+
+.hero-mockup {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    z-index: -1;
+    height: 110%;
+    width: clamp(300px, 80%, 600px);
+    object-fit: cover;
+}
+
+/*everything sections*/
+
+.card-article {
+    transition: .4s;
+    border-color: transparent;
+    border-width: 3px;
+    --text-color: var(--blue);
+}
+
+.card-dark {
+    background: var(--blue);
+    --text-color: var(--white);
+}
+
+.card-article h3 {
+    transition: .4s;
+    color: var(--text-color);
+}
+
+.card-article:hover {
+    border-color: var(--green);
+}
+
+.card-article:hover h3 {
+    color: var(--green);
+}
+
+.card-dark:hover {
+    border-color: var(--cyan);
+}
+
+.card-dark:hover h3 {
+    color: var(--cyan);
+}
+
+/*latest sectoin*/
+#latest .card {
+    transition: .4s;
+    box-shadow: 0 0 20px -10px transparent;
+    cursor: pointer;
+}
+
+#latest .card:hover {
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, .7);
+}
+
+#latest .card h3 {
+    transition: .4s;
+}
+
+#latest .card:hover h3 {
+    color: var(--green);
+}
+
+#latest .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.link-footer {
+    color: var(--white);
+    text-decoration: none;
+    transition: .4s;
+}
+
+.link-footer:hover {
+    color: var(--green);
+}

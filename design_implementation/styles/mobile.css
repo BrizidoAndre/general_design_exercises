@@ -1,0 +1,17 @@
+@media screen and (max-width: 450px) {
+    .hero-background{
+        width: 100% !important;
+        height: 300px;
+        object-fit: cover;
+        left: 0;
+        top: 0;
+    }
+
+    .hero-mockup{
+        top: 0;
+        left: 50%;
+        transform:translateX(-50%);
+        width: 80%;
+        height: auto;
+    }
+}
